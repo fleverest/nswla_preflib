@@ -10,8 +10,6 @@ This CCA License enables a person to copy, distribute and adapt the Material for
 
 You are also required under the CCA License to provide a link to the license and indicate if changes were made. You must not in any way suggest the NSW Electoral Commission endorses you or your use. The CCA License does not give you all of the permissions necessary, for example, other rights such as privacy or moral rights may limit how you use the Material. We recommend you familiarise yourself with the terms of the CCA License before any decision is made to utilise the Material on this website.
 
-You must obtain written permission from the NSW Electoral Commission if you wish to use, copy, distribute, adapt or otherwise deal with Material not licensed under the CCA License.
-
 
 ## Summary of scripts
 
