@@ -16,7 +16,7 @@ I have also written a template for the dataset documentation in `info_template.t
 
 ## Data Origin
 
-The data in this repository was sourced from the [New South Wales Electoral Commission website](https:/pastvtr.elections.nsw.gov.au) and is subject to copyright under the Copyright Act 1968 (Cth). The data in this repository is licensed under the Creative Commons Attribution 4.0 License (CCA License).
+The data in this repository was sourced from the [New South Wales Electoral Commission website](https://pastvtr.elections.nsw.gov.au) and is subject to copyright under the Copyright Act 1968 (Cth). The data in this repository is licensed under the Creative Commons Attribution 4.0 License (CCA License).
 
 This CCA License enables a person to copy, distribute and adapt the Material for any purpose on the condition that it is appropriately attributed to the NSW Electoral Commission by including the copyright notice ‘© State of New South Wales through the NSW Electoral Commission’ on all uses.
 
