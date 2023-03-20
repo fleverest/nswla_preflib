@@ -19,14 +19,14 @@ into PrefLib format.
 The file `nsw_legislative_assembly_elections.csv` contains a table of election
 summaries for contests involved in the NSW Legislative Assembly elections. For
 each election there are a few details including the year, publication date,
-a dataset "title", and a download url.
+a dataset "title", and a download URL.
 
 I have also written a template for the dataset documentation in
 `info_template.txt`.
 
 * `download.R`: **Do not run!** All of the data is already contained in this
 repository, and I have only included this script for completeness. It is
-a simple script which downloads each dataset from the urls found in the
+a simple script which downloads each dataset from the URLs found in the
 `nsw_legislative_assembly_elections.csv` data file.
 
 * `process.R`: This script converts the original data files into a [valid
