@@ -4,7 +4,8 @@
 [![CC BY 4.0][cc-by-shield]][cc-by]
 <!-- badges: end -->
 
-This repository contains the election data and scripts used to process it into PrefLib format.
+This repository contains the election data and scripts used to process it into
+PrefLib format.
 
 The directory `raw_data` contains files downloaded from the NSW Electoral
 Commission website.
@@ -15,13 +16,27 @@ into PrefLib format.
 
 ## Summary of scripts
 
-The file `nsw_legislative_assembly_elections.csv` contains a table of election summaries for contests involved in the NSW Legislative Assembly elections. For each election there are a few details including the year, publication date, a dataset "title", and a download url.
+The file `nsw_legislative_assembly_elections.csv` contains a table of election
+summaries for contests involved in the NSW Legislative Assembly elections. For
+each election there are a few details including the year, publication date,
+a dataset "title", and a download url.
 
-I have also written a template for the dataset documentation in `info_template.txt`.
+I have also written a template for the dataset documentation in
+`info_template.txt`.
 
-* `download.R`: **Do not run!** All of the data is already contained in this repository, and I have only included this script for completeness. It is a simple script which downloads each dataset from the urls found in the `nsw_legislative_assembly_elections.csv` data file.
-* `process.R`: This script converts the original data files into a [valid PrefLib format](https://www.preflib.org/format). It makes use of my R package [prefio](https://github.com/fleverest/prefio).
-* `generate_info.R`: This script simply adds a summary table to the bottom of `info_template.txt`, and copies it into the output data directory. If you wish to change `info.txt`, edit `info_template.txt` first and then re-run `generate_info.R`.
+* `download.R`: **Do not run!** All of the data is already contained in this
+repository, and I have only included this script for completeness. It is
+a simple script which downloads each dataset from the urls found in the
+`nsw_legislative_assembly_elections.csv` data file.
+
+* `process.R`: This script converts the original data files into a [valid
+PrefLib format](https://www.preflib.org/format). It makes use of my R package
+[prefio](https://github.com/fleverest/prefio).
+
+* `generate_info.R`: This script simply adds a summary table to the bottom of
+`info_template.txt`, and copies it into the output data directory. If you wish
+to change `info.txt`, edit `info_template.txt` first and then re-run
+`generate_info.R`.
 
 
 ## Data source
