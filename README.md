@@ -1,6 +1,16 @@
 # New South Wales Legislative Assembly Election Data
 
+<!-- badges: start -->
+[![CC BY 4.0][cc-by-shield]][cc-by]
+<!-- badges: end -->
+
 This repository contains the election data and scripts used to process it into PrefLib format.
+
+The directory `raw_data` contains files downloaded from the NSW Electoral
+Commission website.
+
+Other directories contained processed versions of these data, after conversion
+into PrefLib format.
 
 
 ## Summary of scripts
@@ -14,10 +24,27 @@ I have also written a template for the dataset documentation in `info_template.t
 * `generate_info.R`: This script simply adds a summary table to the bottom of `info_template.txt`, and copies it into the output data directory. If you wish to change `info.txt`, edit `info_template.txt` first and then re-run `generate_info.R`.
 
 
-## Data Origin
+## Data source
 
-The data in this repository was sourced from the [New South Wales Electoral Commission website](https://pastvtr.elections.nsw.gov.au) and is subject to copyright under the Copyright Act 1968 (Cth). The data in this repository is licensed under the Creative Commons Attribution 4.0 License (CCA License).
+The raw data in this repository were sourced from the [New South Wales
+Electoral Commission website](https://pastvtr.elections.nsw.gov.au).  They are
+subject to copyright under the Copyright Act 1968 (Cth):  
+© State of New South Wales through the NSW Electoral Commission
 
-This CCA License enables a person to copy, distribute and adapt the Material for any purpose on the condition that it is appropriately attributed to the NSW Electoral Commission by including the copyright notice ‘© State of New South Wales through the NSW Electoral Commission’ on all uses.
+The data are licensed under the Creative Commons Attribution 4.0 License (see
+below).  This licence enables a person to copy, distribute and adapt the
+Material for any purpose on the condition that it is appropriately attributed
+to the NSW Electoral Commission by including the copyright notice ‘© State of
+New South Wales through the NSW Electoral Commission’ on all uses.
 
-You are also required under the CCA License to provide a link to the license and indicate if changes were made. You must not in any way suggest the NSW Electoral Commission endorses you or your use. The CCA License does not give you all of the permissions necessary, for example, other rights such as privacy or moral rights may limit how you use the Material. We recommend you familiarise yourself with the terms of the CCA License before any decision is made to utilise the Material on this website.
+
+## Licence
+
+The files in this repository are licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
