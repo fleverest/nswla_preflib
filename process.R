@@ -14,11 +14,6 @@ if (!outdir %in% list.files()) {
 
 # This function reads an LA election file to a preferences object
 read_la <- function(rowdata) {
-  cat("Reading ",
-      rowdata["district"],
-      " ",
-      rowdata["year"],
-      ".\n", sep = "")
   zipfile <- file.path("raw_data",
                        rowdata["year"],
                        paste0(rowdata["district"], ".zip"))
@@ -35,14 +30,15 @@ read_la <- function(rowdata) {
 }
 
 # This function will write each election to the required preflib dataset formats
-write_preflib <- function(row) {
-  prefs <- read_la(row)
-  cat("Writing ",
+write_la <- function(row) {
+  cat("Processing ",
       row["district"],
       " ",
       row["year"],
-      ".\n")
-  write.preflib(prefs,
+      ".\n",
+      sep = "")
+  prefs <- read_la(row)
+  write_preflib(prefs,
                 file.path(outdir,
                           paste0(preflib_series_number,
                                  "-",
@@ -57,4 +53,4 @@ write_preflib <- function(row) {
 
 apply(la,
       1L,
-      write_preflib)
+      write_la)
