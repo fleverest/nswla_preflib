@@ -22,7 +22,13 @@ summaries$title <- la[, "title"]
 summaries$description <- ""
 summaries$publication_date <- la[, "published"]
 
-# Copy the info template and append the csv data to the bottom
 out_file <- file.path(out_dir, "info.txt")
+
+# If the destination file exists, delete it.
+if (file.exists(out_file)) {
+  file.remove(out_file)
+}
+
+# Copy the info template and append the csv data to the bottom
 file.copy(file.path("info_template.txt"), out_file)
 write.table(summaries, out_file, append = TRUE, row.names = FALSE, quote = FALSE, sep = ", ")
