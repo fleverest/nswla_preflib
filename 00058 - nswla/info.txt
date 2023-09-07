@@ -8,7 +8,11 @@ Series Number: 00058
 
 Publication Date: 2023-05-24
 
+<<<<<<< HEAD
 Description: <p>The New South Wales (NSW) Legislative Assembly is the lower of two houses of the Parliament of New South Wales, an Australian state. The Assembly comprises 93 seats, each representing one of 93 Districts.</p><p>In these elections, voters submitted Optional Preferential Votes; these ballots required at least one candidate to be specified. The outcome of each election was determined by the Instant-Runoff Voting (IRV) social choice function.</p><p>The data sets posted below correspond to each of the NSW districts in the 2015 and 2019 NSW Legislative Assembly elections. The elements numbered 1-93 correspond to the 2015 elections, while those numbered 94-186 correspond to the 2019 elections.</p><p>These datafiles comprise all formal votes cast in each contest, with informal votes omitted.</p>
+=======
+Description: <p>The New South Wales (NSW) Legislative Assembly is the lower of two houses of the Parliament of New South Wales, an Australian state. The Assembly comprises 93 seats, each representing one of 93 Districts.</p><p>In these elections, voters submitted Optional Preferential Votes; these ballots required at least one candidate to be specified. The outcome of each election was determined by the Instant-Runoff Voting (IRV) social choice function.</p><p>The data sets posted below correspond to each of the NSW districts in the 2015, 2019 and 2023 NSW Legislative Assembly elections. The elements numbered 1-93 correspond to the 2015 election, those numbered 94-186 correspond to the 2019 election, and those numbered 187-279 correspond to the 2023 election.</p><p>These datafiles comprise all formal votes cast in each contest, with informal votes omitted.</p>
+>>>>>>> informal_omission
 
 Required Citations: © State of New South Wales through NSW Electoral Commission, <a href="https://elections.nsw.gov.au/copyright">elections.nsw.gov.au</a>, 2018.
 
@@ -207,7 +211,7 @@ file_name, modification_type, relates_to, title, description, publication_date
 00058-00000190.soi, original, , Ballina 2023, , 2023-03-25
 00058-00000191.soi, original, , Balmain 2023, , 2023-03-25
 00058-00000192.soi, original, , Bankstown 2023, , 2023-03-25
-00058-00000193.soi, original, , Barwon%202023, , 2023-03-25
+00058-00000193.soi, original, , Barwon 2023, , 2023-03-25
 00058-00000194.soi, original, , Bathurst 2023, , 2023-03-25
 00058-00000195.soi, original, , Bega 2023, , 2023-03-25
 00058-00000196.soi, original, , Blacktown 2023, , 2023-03-25
