@@ -1,10 +1,20 @@
 #!/usr/bin/env Rscript
 
 library(prefio)
+library(readr)
+library(dplyr)
+library(glue)
 
 preflib_series_number <- "00058"
 preflib_abbreviation <- "nswla"
-la <- read.csv("nsw_legislative_assembly_elections.csv")
+
+# Read manifest and determine input and output file locations
+la <- read_csv("nsw_legislative_assembly_elections.csv") |>
+  mutate(
+    file_loc = glue("./raw_data/{year}/{district}.zip"),
+    out_file = glue("./{preflib_series_number} - {preflib_abbreviation}/{preflib_series_number}-{sprintf('%08d', index)}.soi")
+  ) |>
+  select(file_loc, out_file, title, published)
 
 # Check whether or not the preflib output directory exists:
 outdir <- paste(preflib_series_number, "-", preflib_abbreviation)
@@ -12,45 +22,19 @@ if (!outdir %in% list.files()) {
   dir.create(outdir)
 }
 
-# This function reads an LA election file to a preferences object
-read_la <- function(rowdata) {
-  zipfile <- file.path("raw_data",
-                       rowdata["year"],
-                       paste0(rowdata["district"], ".zip"))
-  exdir <- tempdir()
-  datafile <- unzip(zipfile, exdir = exdir)
-  df <- read.csv(datafile, sep = "\t")
-  df_filtered <- df[!is.na(df$PrefCounted), ]
-  return(preferences(df_filtered,
-                     format = "long",
-                     id = "BPNumber",
-                     item = "CandidateName",
-                     rank = "PrefCounted",
-                     aggregate = TRUE))
-}
-
-# This function will write each election to the required preflib dataset formats
-write_la <- function(row) {
-  cat("Processing ",
-      row["district"],
-      " ",
-      row["year"],
-      ".\n",
-      sep = "")
-  prefs <- read_la(row)
-  write_preflib(prefs,
-                file.path(outdir,
-                          paste0(preflib_series_number,
-                                 "-",
-                                 sprintf("%08d", as.integer(row["index"])),
-                                 ".",
-                                 attr(prefs$preferences, "preftype"))),
-                title = row["title"],
-                modification_date = format(Sys.time(), "%Y-%m-%d"),
-                modification_type = "original",
-                publication_date = row["published"])
-}
-
-apply(la,
-      1L,
-      write_la)
+# Read elections and convert to preflib formats
+apply(
+  la,
+  1L,
+  \(row) {
+    read_delim(row[1], delim = "\t") |>
+      long_preferences(vote, id_cols = BPNumber, item_col = CandidateName, rank_col = PrefCounted) |>
+      write_preflib(
+        row[2],
+        title = row[3],
+        modification_date = format(Sys.time(), "%Y-%m-%d"),
+        modification_type = "original",
+        publication_date = row[4]
+      )
+  }
+)
